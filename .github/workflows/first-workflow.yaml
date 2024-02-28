@@ -2,12 +2,12 @@ name: Lint, Test & Deploy on "push"
 on: push
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Get Code
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Install NodeJS
-        uses: actions/setup-node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Install Dependencies
@@ -16,12 +16,12 @@ jobs:
         run: npm run lint
   test:
     needs: lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Get Code
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Install NodeJS
-        uses: actions/setup-node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Install Dependencies
@@ -30,12 +30,12 @@ jobs:
         run: npm run test
   deploy:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Get Code
-        uses: actions/checkout
+        uses: actions/checkout@v4
       - name: Install NodeJS
-        uses: actions/setup-node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Install Dependencies

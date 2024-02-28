@@ -2,7 +2,7 @@ name: Output Event Details on "issues"
 on: issues
 jobs:
   info:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Output Event Details
         run: echo ${{ toJson(github) }}
